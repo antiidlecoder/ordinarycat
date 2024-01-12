@@ -1,27 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply text-orange-300;
+  }
+  p {
+    @apply mb-2;
+  }
+  span {
+    @apply text-orange-300;
+    @apply mb-2;
+    @apply block;
+  }
+  .btn,
+  button {
+    border-style: solid;
+    border-width: 4px;
+    border-left-color: white;
+    border-top-color: white;
+    border-bottom-color: dimgrey;
+    border-right-color: dimgrey;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.75);
+    @apply bg-orange-300;
+    @apply text-black;
+
+    &:hover {
+      @apply bg-orange-500;
+    }
+  }
+
+  .control button {
+    margin-right: 10px;
+    padding: 10px;
+  }
+
+  .control > div {
+    @apply mb-4;
+  }
+
+  .input {
+    border-style: solid;
+    border-width: 4px;
+    border: dimgrey;
+
+    @apply text-black;
+  }
 }
